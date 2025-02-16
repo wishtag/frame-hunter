@@ -33,19 +33,22 @@ print("Make sure the window is focused on")
 time.sleep(3)
 
 try:
-    os.remove("img/screenshot.png")
+    os.remove("screenshot.png")
 except:
     pass
 
+pyautogui.hotkey('shift', 'f1')
+
 while isShiny == False:
     resets = read_json("resets.json")
-
+    pyautogui.hotkey('ctrl', 'p')
     pyautogui.press('f1')
     pyautogui.hotkey('ctrl', 'n')
     time.sleep(0.1)
     pyautogui.hotkey('shift', 'f1')
+    pydirectinput.keyDown('x')
     pyautogui.hotkey('ctrl', 'p')
-    pydirectinput.press('x')
+    pydirectinput.keyUp('x')
     pydirectinput.keyDown('tab')
     while True:
         time.sleep(0.005)
@@ -66,10 +69,11 @@ while isShiny == False:
     if r != settings["colors"]["encounter"][0] or g != settings["colors"]["encounter"][1] or b != settings["colors"]["encounter"][2]:
         isShiny = True
         print("Is Shiny\nSave State Created")
-        screenshot = ImageGrab.grab(bbox=bounding_boxes["game_screen"])
-        screenshot.save("img/screenshot.png")
-        screenshot.close()
         pyautogui.hotkey('shift', 'f9')
+        time.sleep(5.5)
+        screenshot = ImageGrab.grab(bbox=bounding_boxes["game_screen"])
+        screenshot.save("screenshot.png")
+        screenshot.close()
 
         hour = datetime.now(timezone('US/Central')).hour
         minute = datetime.now(timezone('US/Central')).minute
@@ -90,7 +94,7 @@ while isShiny == False:
         time_formatted = f"{hours} hours, {minutes} minutes, and {seconds} seconds"
 
         webhook = DiscordWebhook(url=discord["url"], username=discord["name"])
-        with open("img/screenshot.png", "rb") as f:
+        with open("screenshot.png", "rb") as f:
             webhook.add_file(file=f.read(), filename="screenshot.png")
         embed = DiscordEmbed(title=f"Shiny {settings['pokemon_name']} Found", description=f"{resets['resets']} encounters over the span of {time_formatted} ({resets['total_seconds']})", color="FCDE3A")
         embed.set_author(name="Shiny Found", icon_url=discord["icon"])
