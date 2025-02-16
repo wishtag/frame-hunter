@@ -47,7 +47,15 @@ while isShiny == False:
     pyautogui.hotkey('ctrl', 'p')
     pydirectinput.press('x')
     pydirectinput.keyDown('tab')
-    time.sleep(0.8)
+    while True:
+        time.sleep(0.005)
+        screenshot = ImageGrab.grab(bbox=settings["screen_size"])
+        pixels = screenshot.load()
+        screenshot.close()
+        print(pixels[bounding_boxes["name_plate"][0], bounding_boxes["name_plate"][1]])
+        r, g, b = pixels[bounding_boxes["name_plate"][0], bounding_boxes["name_plate"][1]]
+        if r == settings["colors"]["name_plate"][0] and g == settings["colors"]["name_plate"][1] and b == settings["colors"]["name_plate"][2]:
+            break
     pydirectinput.keyUp('tab')
 
     screenshot = ImageGrab.grab(bbox=settings["screen_size"])
@@ -58,7 +66,7 @@ while isShiny == False:
     if r != settings["colors"]["encounter"][0] or g != settings["colors"]["encounter"][1] or b != settings["colors"]["encounter"][2]:
         isShiny = True
         print("Is Shiny\nSave State Created")
-        screenshot = ImageGrab.grab(bbox=(961,247,1919,885))
+        screenshot = ImageGrab.grab(bbox=bounding_boxes["game_screen"])
         screenshot.save("img/screenshot.png")
         screenshot.close()
         pyautogui.hotkey('shift', 'f9')

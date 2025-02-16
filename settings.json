@@ -4,10 +4,12 @@
     "screen_size": [0, 0, 1920, 1080],
     "bounding_boxes": {
         "game_screen": [183, 44, 1737, 1078],
-        "encounter": [1327, 417]
+        "encounter": [1327, 417],
+        "name_plate": [871, 318]
     },
     "colors": {
-        "encounter": [231, 66, 0]
+        "encounter": [231, 66, 0],
+        "name_plate": [82, 107, 99]
     },
     "discord": {
         "url": "",
