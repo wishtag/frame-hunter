@@ -12,7 +12,7 @@ The shiny detection is pretty simple, by choosing a color from the non-shiny var
 Through the use of a discord webhook, the program will notify you when it finds a shiny.  
 # <img src="img/Webhookoutput.png" alt="Webhook">  
 # Showcase
-If you pay attention to the bottom right, you'll see how each Electrode it encountered was a different one. The program can actually run faster than this, it's just the script I had open that monitors the frames and IVs and stuff slows down the max speed the game can run.
+If you pay attention to the bottom right, you'll see how each Electrode it encountered was a different one. The program can actually run faster than this, it's just the script I had open that monitors the frames and IVs and stuff slows down the max speed the game can run.  
 https://github.com/user-attachments/assets/094cba1f-f700-493a-bb3f-85187cb46a40  
 # Setup
 Most of the setup is very easy, the hardest part is setting up the bounding boxes and stuff  
