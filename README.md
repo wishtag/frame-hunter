@@ -1,3 +1,4 @@
+# <img src="img/banner.png" alt="banner" style="width:100%;">  
 # Frame Hunter
 A python program for mGBA that starts an encounter for every frame  
 # Features
@@ -9,9 +10,10 @@ Tracks and saves the total encounters and elapsed time to `resets.json`.
 The shiny detection is pretty simple, by choosing a color from the non-shiny variant that doesn't appear on the shiny variant, the program can tell if an encounter is shiny. The program simply checks if a specific pixel is a certain color, if it is that color, then it's not shiny. But if it isn't that color, then you found a shiny!  
 ## Discord Notifying
 Through the use of a discord webhook, the program will notify you when it finds a shiny.  
-<img src="img/Webhookoutput.png" alt="Webhook">  
+# <img src="img/Webhookoutput.png" alt="Webhook">  
 # Showcase
-PUT A VID HERE  
+If you pay attention to the bottom right, you'll see how each Electrode it encountered was a different one. The program can actually run faster than this, it's just the script I had open that monitors the frames and IVs and stuff slows down the max speed the game can run.
+https://github.com/user-attachments/assets/094cba1f-f700-493a-bb3f-85187cb46a40  
 # Setup
 Most of the setup is very easy, the hardest part is setting up the bounding boxes and stuff  
 ## Getting Positions
