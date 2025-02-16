@@ -1,0 +1,18 @@
+{
+    "pokemon_name": "Electrode",
+
+    "screen_size": [0, 0, 1920, 1080],
+    "bounding_boxes": {
+        "game_screen": [183, 44, 1737, 1078],
+        "encounter": [1327, 417]
+    },
+    "colors": {
+        "encounter": [231, 66, 0]
+    },
+    "discord": {
+        "url": "",
+        "name": "Sparkles",
+        "icon": "https://em-content.zobj.net/source/apple/391/sparkles_2728.png",
+        "game": "Fire Red"
+    }
+}
